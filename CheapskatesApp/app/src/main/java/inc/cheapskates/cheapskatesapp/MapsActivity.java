@@ -18,7 +18,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);//gets the lat and lon from the bundle.
+        super.onCreate(savedInstanceState);
+        //gets the lat and lon from the last intent.
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
             lat = bundle.getString("lat");
