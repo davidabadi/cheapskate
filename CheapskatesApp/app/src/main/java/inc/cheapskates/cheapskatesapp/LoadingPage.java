@@ -66,9 +66,13 @@ public class LoadingPage extends AppCompatActivity {
         //stores longitude and latitude
         String longitude = getLongitude(this);
         String latitude = getLatitude(this);
-
+        String cuisine = "1";
         //Writes URL in string form
-        String request_url = "https://developers.zomato.com/api/v2.1/search?lat=" + latitude + "&lon=" +longitude + "&radius=2000&sort=real_distance&order=asc";
+        //String request_url = "https://developers.zomato.com/api/v2.1/search?lat=" + latitude + "&lon=" +longitude + "&radius=2000&sort=real_distance&order=asc";
+        //String request_url = "https://developers.zomato.com/api/v2.1/search?lat=42.3698998&lon=-71.072686&radius=2000&sort=real_distance&order=asc";
+        //String request_url = "https://developers.zomato.com/api/v2.1/search?lat=42.3505&lon=-71.1054&radius=2000&sort=real_distance&order=asc";
+        //String request_url = "https://developers.zomato.com/api/v2.1/search?lat=42.3505&lon=-71.1054&radius=2000&cuisines=1&sort=real_distance&order=asc";
+        String request_url = "https://developers.zomato.com/api/v2.1/search?lat="+ latitude + "&lon="+ longitude + "&radius=2000&cuisines=" + cuisine + "&sort=real_distance&order=asc";
 
         //Just makes the loading page stay for 4 seconds
 //        if (Integer.parseInt(getBudget(this)) == 0) {
@@ -87,8 +91,14 @@ public class LoadingPage extends AppCompatActivity {
 
     private void getResponse(String latitude, String longitude){
         RequestQueue queue = Volley.newRequestQueue(this);
-
-        String request_url = "https://developers.zomato.com/api/v2.1/search?lat=" + latitude + "&lon=" +longitude + "&radius=2000&sort=real_distance&order=asc";
+        longitude = getLongitude(this);
+        latitude = getLatitude(this);
+        String cuisine = "1";
+        //String request_url = "https://developers.zomato.com/api/v2.1/search?lat=" + latitude + "&lon=" +longitude + "&radius=2000&sort=real_distance&order=asc";
+        //String request_url = "https://developers.zomato.com/api/v2.1/search?lat=42.3698998&lon=-71.072686&radius=2000&sort=real_distance&order=asc";
+        //String request_url = "https://developers.zomato.com/api/v2.1/search?lat=42.3505&lon=-71.1054&radius=2000&sort=real_distance&order=asc";
+        //String request_url = "https://developers.zomato.com/api/v2.1/search?lat=42.3505&lon=-71.1054&radius=2000&cuisines=1&sort=real_distance&order=asc";
+        String request_url = "https://developers.zomato.com/api/v2.1/search?lat="+ latitude + "&lon="+ longitude + "&radius=2000&cuisines=" + cuisine + "&sort=real_distance&order=asc";
         JsonObjectRequest postRequest = new JsonObjectRequest(Request.Method.GET, request_url, null,
                 new Response.Listener<JSONObject>() {
                     @Override
@@ -139,7 +149,7 @@ public class LoadingPage extends AppCompatActivity {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("user-key", "55a1d18014dd0c0dac534c02598a3368");
+                params.put("user-key", "32c01c73d88b8b51ea88964a14563e61");
                 params.put("Accept", "application/json");
 
                 return params;
@@ -149,7 +159,7 @@ public class LoadingPage extends AppCompatActivity {
     }
 
     //Makes the API Call run in the background
-    private class JSONTask extends AsyncTask<String, JSONObject, JSONObject>
+    /*private class JSONTask extends AsyncTask<String, JSONObject, JSONObject>
     {
         //Shows the Progress Bar before the background processing is done
         protected void onPreExecute()
@@ -229,7 +239,7 @@ public class LoadingPage extends AppCompatActivity {
                 //gets the name of the restaurant as a string
                 restaurantName = restaurantJSONPrimivite.getAsString();
                 //adds the name of the restaurant to the list of restaurant
-                restaurantnamelist.add(restaurantName);*/
+                restaurantnamelist.add(restaurantName);/
                     }catch (JSONException e) {
                         e.printStackTrace();
                     }
@@ -268,7 +278,7 @@ public class LoadingPage extends AppCompatActivity {
             finish();
         }
 
-    }
+    }*/
 
     //Finds the budget and retrieve from SharedPreferences
     public static String getBudget(Context context)
