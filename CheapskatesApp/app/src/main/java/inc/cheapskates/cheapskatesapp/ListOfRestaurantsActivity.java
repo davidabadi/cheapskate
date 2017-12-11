@@ -69,5 +69,12 @@ public class ListOfRestaurantsActivity extends AppCompatActivity {
         editor.apply();
     }
 
+    public void backbutton(View v) {
+        Button button = (Button) v;
+        Intent intent = new Intent(this, food_categories.class);
+        v.findViewById(R.id.back_button);
+        startActivity(intent);
+    }
+
     //Stores
 }
