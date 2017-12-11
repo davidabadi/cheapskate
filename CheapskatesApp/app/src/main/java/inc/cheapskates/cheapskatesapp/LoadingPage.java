@@ -58,17 +58,12 @@ public class LoadingPage extends AppCompatActivity {
         //stores longitude and latitude
         String longitude = getLongitude(this);
         String latitude = getLatitude(this);
-        String cuisine = getCuisine(this);
-        String request_url = "https://developers.zomato.com/api/v2.1/search?lat="+ latitude + "&lon="+ longitude + "&radius=2000&cuisines=" + cuisine + "&sort=real_distance&order=asc";
-
-        getResponse(longitude, longitude);
+        getResponse(latitude, longitude);
     }
 
     //JSON parsing and establishing connection to zomato
     private void getResponse(String latitude, String longitude){
         RequestQueue queue = Volley.newRequestQueue(this);
-        longitude = getLongitude(this);
-        latitude = getLatitude(this);
         String cuisine = getCuisine(this);
         String request_url = "https://developers.zomato.com/api/v2.1/search?lat="+ latitude + "&lon="+ longitude + "&radius=2000&cuisines=" + cuisine + "&sort=real_distance&order=asc";
         JsonObjectRequest postRequest = new JsonObjectRequest(Request.Method.GET, request_url, null,
