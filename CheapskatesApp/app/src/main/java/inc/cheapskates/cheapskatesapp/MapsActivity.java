@@ -13,10 +13,17 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+    private String lon;
+    private String lat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            lat = bundle.getString("lat");
+            lon = bundle.getString("lon");
+        }
         setContentView(R.layout.activity_maps);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -39,7 +46,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap = googleMap;
 
         // Add a marker at Restaurant and move the camera
-        LatLng restaurant = new LatLng(42.3505, -71.1054);
+        LatLng restaurant = new LatLng(Double.parseDouble(lat), Double.parseDouble(lon));
         mMap.addMarker(new MarkerOptions().position(restaurant).title(""));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(restaurant, 18));
 
