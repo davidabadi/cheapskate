@@ -66,7 +66,7 @@ public class LoadingPage extends AppCompatActivity {
         //stores longitude and latitude
         String longitude = getLongitude(this);
         String latitude = getLatitude(this);
-        String cuisine = "1";
+        String cuisine = getCuisine(this);
         //Writes URL in string form
         //String request_url = "https://developers.zomato.com/api/v2.1/search?lat=" + latitude + "&lon=" +longitude + "&radius=2000&sort=real_distance&order=asc";
         //String request_url = "https://developers.zomato.com/api/v2.1/search?lat=42.3698998&lon=-71.072686&radius=2000&sort=real_distance&order=asc";
@@ -93,7 +93,7 @@ public class LoadingPage extends AppCompatActivity {
         RequestQueue queue = Volley.newRequestQueue(this);
         longitude = getLongitude(this);
         latitude = getLatitude(this);
-        String cuisine = "1";
+        String cuisine = getCuisine(this);
         //String request_url = "https://developers.zomato.com/api/v2.1/search?lat=" + latitude + "&lon=" +longitude + "&radius=2000&sort=real_distance&order=asc";
         //String request_url = "https://developers.zomato.com/api/v2.1/search?lat=42.3698998&lon=-71.072686&radius=2000&sort=real_distance&order=asc";
         //String request_url = "https://developers.zomato.com/api/v2.1/search?lat=42.3505&lon=-71.1054&radius=2000&sort=real_distance&order=asc";
@@ -331,6 +331,13 @@ public class LoadingPage extends AppCompatActivity {
     {
         SharedPreferences prefs = context.getSharedPreferences("Longitude",0);
         return prefs.getString("longitude","");
+    }
+
+    //Finds the Cuisine id from SharedPreferences
+    public static String getCuisine(Context context)
+    {
+        SharedPreferences prefs = context.getSharedPreferences("Cuisine",0);
+        return prefs.getString("cuisine","");
     }
 
 }

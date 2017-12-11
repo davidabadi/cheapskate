@@ -41,4 +41,27 @@
     <string name="popuptext">Your budget is too large.</string>
     <string name="popuptext2">This app is only for Cheapskates.</string>
     <string name="show_in_maps">Show in maps</string>
+    <string name="american">American</string>
+    <string name="icecream">IceCream</string>
+    <string name="mediterranean">Mediterranean</string>
+    <string name="korean">Korean</string>
+    <string name="mexican">Mexican</string>
+    <string name="indian">Indian</string>
+    <string name="italian">Italian</string>
+    <string name="french">French</string>
+    <string name="fast_food">Fast Food</string>
+    <string name="dessert">Dessert</string>
+    <string name="pizza">Pizza</string>
+    <string name="chinese">Chinese</string>
+    <string name="seafood">Seafood</string>
+    <string name="breakfast">Breakfast</string>
+    <string name="beverages">Beverages</string>
+    <string name="burger">Burger</string>
+    <string name="bakery">Bakery</string>
+    <string name="southern">Southern</string>
+    <string name="japanese">Japanese</string>
+    <string name="thai">Thai</string>
+    <string name="vegetarian">Vegetarian</string>
+    <string name="budget">Budget:</string>
+    <string name="restaurants">Restaurants</string>
 </resources>
