@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import java.io.Serializable;
 import java.util.List;
 
 public class ListOfRestaurantsActivity extends AppCompatActivity {
@@ -36,12 +37,14 @@ public class ListOfRestaurantsActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent it = new Intent(ListOfRestaurantsActivity.this, resturant_info.class);
-                it.putExtra("id",resturantList.get(position).getId());
-                startActivity(it);
+                /*Intent it = new Intent(ListOfRestaurantsActivity.this, resturant_info.class);
+                it.putExtra("restaurant",resturantList.get(position));
+                */
+                Intent intent = new Intent(ListOfRestaurantsActivity.this,resturant_info.class).putExtra("id",resturantList.get(position).getId());
+                intent.putExtra("restaurantsList",(Serializable)resturantList );
+                startActivity(intent);
             }
         });
-
     }
 
     //setting up mybudget variable

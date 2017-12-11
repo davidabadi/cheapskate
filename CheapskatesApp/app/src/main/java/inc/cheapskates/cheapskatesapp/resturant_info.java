@@ -18,18 +18,32 @@ public class resturant_info extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resturant_info);
+        String id;
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null){
+            id = bundle.getString("id");
+            resturantList = (List<Resturant>) getIntent().getSerializableExtra("restaurantsList");
+            Resturant restaurant = getResturant(id, resturantList);
+            TextView rest_name = findViewById(R.id.resturantname);
+            rest_name.setText(restaurant.getName());
+            TextView rest_address = findViewById(R.id.RestaurantAddress);
+            rest_address.setText(restaurant.getAddress());
+            TextView rest_locality = findViewById(R.id.resturantlocality2);
+            rest_locality.setText(restaurant.getLocality());
+            TextView rest_rating = findViewById(R.id.resturantrating);
+            rest_rating.setText(restaurant.getRating());
+        }
         /*
-        resturantList = (List<Resturant>) getIntent().getSerializableExtra("listResturant");
-        Resturant restaurant = getResturant(getId(this), resturantList);
-        TextView rest_name = findViewById(R.id.resturantname);
-        rest_name.setText(restaurant.getName());
-        TextView rest_address = findViewById(R.id.RestaurantAddress);
-        rest_address.setText(restaurant.getAddress());
-        TextView rest_locality = findViewById(R.id.resturantlocality2);
-        rest_locality.setText(restaurant.getLocality());
-        TextView rest_rating = findViewById(R.id.resturantrating);
-        rest_rating.setText(restaurant.getRating());
+        String id = getIntent().getExtras().getParcelable("id");
+
+
+
+
+
         */
+
+
+
     }
 
 
@@ -72,7 +86,7 @@ public class resturant_info extends AppCompatActivity {
 
     Resturant getResturant(String id, List<Resturant> resturantList){
         for(int i = 0; i < resturantList.size(); i++){
-            if(resturantList.get(i).getId() == id){
+            if(resturantList.get(i).getId().equals(id)){
                 Resturant result = resturantList.get(i);
                 return result;
             }
