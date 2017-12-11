@@ -6,12 +6,6 @@
     android:layout_height="match_parent"
     tools:context="inc.cheapskates.cheapskatesapp.resturant_info">
 
-    <LinearLayout
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:layout_width="0px"
-        android:layout_height="0px"/>
-
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar3"
@@ -87,6 +81,7 @@
         android:layout_width="wrap_content"
         android:layout_height="28dp"
         android:layout_marginStart="70dp"
+        android:layout_marginLeft="70dp"
         android:layout_marginTop="16dp"
         android:text="@string/ratingtag"
         android:textColor="@color/darkblue"
@@ -124,15 +119,14 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/ratingtag"
-        app:layout_constraintTop_toBottomOf="@+id/resturantlocality2"
-        tools:test="Website"
-        tools:text="Rating" />
+        app:layout_constraintTop_toBottomOf="@+id/resturantlocality2" />
 
     <TextView
         android:id="@+id/addresstag"
         android:layout_width="89dp"
         android:layout_height="31dp"
         android:layout_marginStart="70dp"
+        android:layout_marginLeft="70dp"
         android:layout_marginTop="24dp"
         android:text="@string/addresstag"
         android:textColor="@color/darkblue"
@@ -148,6 +142,7 @@
         android:layout_height="35dp"
         android:layout_marginBottom="8dp"
         android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
         android:layout_marginTop="8dp"
         android:background="@color/orange"
         android:onClick="gobutton4"
@@ -204,20 +199,20 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/localitytag2"
-        app:layout_constraintTop_toBottomOf="@+id/RestaurantAddress"
-        tools:test="Website" />
+        app:layout_constraintTop_toBottomOf="@+id/RestaurantAddress" />
 
     <TextView
         android:id="@+id/localitytag2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="70dp"
+        android:layout_marginLeft="70dp"
         android:layout_marginTop="16dp"
+        android:text="Locality: "
         android:textColor="@color/darkblue"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addresstag"
-        tools:text="Locality:" />
+        app:layout_constraintTop_toBottomOf="@+id/addresstag" />
 
     <Button
         android:id="@+id/back_button2"
@@ -229,14 +224,13 @@
         android:layout_marginTop="8dp"
         android:background="@color/common_google_signin_btn_text_dark_default"
         android:backgroundTint="@color/common_google_signin_btn_text_light_default"
-        android:text="Button"
+        android:text="Back"
         android:textColor="@color/white"
         android:textSize="12sp"
         android:onClick="backbutton"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/toolbar3"
-        tools:text="Back" />
+        app:layout_constraintTop_toTopOf="@+id/toolbar3" />
 
     <ImageView
         android:id="@+id/imageView2"

@@ -108,8 +108,8 @@ public class resturant_info extends AppCompatActivity {
     }
     public void backbutton(View v) {
         Button button = (Button) v;
-        Intent intent = new Intent(this, ListOfRestaurantsActivity.class);
-        v.findViewById(R.id.back_button);
+        v.findViewById(R.id.back_button2);
+        Intent intent = new Intent(resturant_info.this, ListOfRestaurantsActivity.class);
         startActivity(intent);
     }
 
