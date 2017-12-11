@@ -19,18 +19,18 @@
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.033" />
+        app:layout_constraintVertical_bias="0.141" />
 
     <Button
         android:id="@+id/American"
         android:layout_width="100dp"
         android:layout_height="45dp"
         android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="50dp"
         android:backgroundTint="@color/darkblue"
         android:onClick="americansbutton"
         android:text="@string/american"
@@ -135,7 +135,7 @@
         android:layout_height="45dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="50dp"
         android:backgroundTint="@color/darkblue"
         android:onClick="fastfoodbutton"
         android:text="@string/fast_food"
@@ -249,8 +249,7 @@
         android:layout_width="100dp"
         android:layout_height="45dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="50dp"
         android:backgroundTint="@color/darkblue"
         android:onClick="mexicanbutton"
         android:text="@string/mexican"
@@ -351,19 +350,33 @@
 
     <Button
         android:id="@+id/home_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_width="65dp"
+        android:layout_height="45dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:background="@color/common_google_signin_btn_text_dark_default"
+        android:backgroundTint="@color/common_google_signin_btn_text_light_pressed"
         android:onClick="homebutton"
         android:text="Home"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="@color/white"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.028"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:srcCompat="@mipmap/ic_launcher_foreground" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_launcher_foreground" />
 
 </android.support.constraint.ConstraintLayout>

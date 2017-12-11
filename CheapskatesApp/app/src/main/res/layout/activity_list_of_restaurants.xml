@@ -21,13 +21,14 @@
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:contentDescription="@string/minilogo"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar"
+        app:layout_constraintStart_toEndOf="@+id/gobutton2"
         app:layout_constraintTop_toTopOf="@+id/toolbar"
         app:srcCompat="@drawable/icon" />
 
@@ -60,8 +61,7 @@
         android:layout_height="35dp"
         android:layout_alignTop="@+id/iconview"
         android:layout_marginBottom="8dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_toEndOf="@+id/iconview"
         android:layout_toRightOf="@+id/iconview"
@@ -70,7 +70,7 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintStart_toEndOf="@+id/iconview"
+        app:layout_constraintStart_toEndOf="@+id/back_button"
         app:layout_constraintTop_toTopOf="@+id/toolbar" />
     <!--  rest of the page -->
     <TextView
@@ -120,6 +120,7 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/restaurants"
         android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -128,19 +129,19 @@
 
     <Button
         android:id="@+id/back_button"
-        android:layout_width="wrap_content"
+        android:layout_width="65dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:backgroundTint="@color/common_google_signin_btn_text_light_focused"
         android:onClick="backbutton"
         android:text="Back"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.087" />
+        app:layout_constraintTop_toTopOf="@+id/toolbar"
+        app:srcCompat="?attr/actionModeCloseDrawable" />
 
 </android.support.constraint.ConstraintLayout>
