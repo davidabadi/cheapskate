@@ -114,16 +114,18 @@ public class LoadingPage extends AppCompatActivity {
 
 
                             for (int i = 0; i < restaurantsArray.length(); i++) {
-                                Resturant resturant = new Resturant();
 
                                 JSONObject restObject = restaurantsArray.getJSONObject(i);
                                 JSONObject jsonObjectRest = restObject.getJSONObject("restaurant");
-                                jsonObjectRest.getString("name");
-                                resturant.setId(jsonObjectRest.getString("id"));
-                                resturant.setName(jsonObjectRest.getString("name"));
 
-                                resturantList.add(resturant);
+                                if(compareBudget(jsonObjectRest)) {
+                                    Resturant resturant = new Resturant();
+                                    jsonObjectRest.getString("name");
+                                    resturant.setId(jsonObjectRest.getString("id"));
+                                    resturant.setName(jsonObjectRest.getString("name"));
 
+                                    resturantList.add(resturant);
+                                }
                             }
 
 
@@ -157,6 +159,31 @@ public class LoadingPage extends AppCompatActivity {
         };
         queue.add(postRequest);
     }
+
+
+
+
+    boolean compareBudget(JSONObject rest) throws JSONException {
+        boolean result =  false;
+        int range = 0;
+        int budget = Integer.parseInt(getBudget(this));
+        if(budget <= 10){
+            range = 1;
+        }else if(budget > 10  && budget <= 25){
+            range = 2;
+        }else if(budget > 25 && budget <= 50){
+            range = 3;
+        }else if(budget > 50){
+            range = 4;
+        }
+
+        if(rest.getInt("price_range") <= range) {
+            result = true;
+        }
+
+        return result;
+    }
+
 
     //Makes the API Call run in the background
     /*private class JSONTask extends AsyncTask<String, JSONObject, JSONObject>
