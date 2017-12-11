@@ -59,10 +59,10 @@ import java.util.Objects;
 
 public class food_categories extends AppCompatActivity {
 
-//<<<<<<< HEAD
 
-//=======
-//>>>>>>> 01bdb969b6590e70bd6bd8b573188bc9ddfe7103
+    private int cuisine;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,6 +82,8 @@ public class food_categories extends AppCompatActivity {
         Button button = (Button) v;
         Intent intent = new Intent(this, LoadingPage.class);
         v.findViewById(R.id.confirm);
+        cuisine = 1;
+        setCuisine(this, Integer.toString(cuisine));
         startActivity(intent);
     }
 
@@ -90,6 +92,8 @@ public class food_categories extends AppCompatActivity {
         Button button = (Button) v;
         Intent intent = new Intent(this, LoadingPage.class);
         v.findViewById(R.id.confirm);
+        cuisine = 5;
+        setCuisine(this, Integer.toString(cuisine));
         startActivity(intent);
     }
 
@@ -98,6 +102,8 @@ public class food_categories extends AppCompatActivity {
         Button button = (Button) v;
         Intent intent = new Intent(this, LoadingPage.class);
         v.findViewById(R.id.confirm);
+        cuisine = 270;
+        setCuisine(this, Integer.toString(cuisine));
         startActivity(intent);
     }
 
@@ -106,6 +112,8 @@ public class food_categories extends AppCompatActivity {
         Button button = (Button) v;
         Intent intent = new Intent(this, LoadingPage.class);
         v.findViewById(R.id.confirm);
+        cuisine = 182;
+        setCuisine(this, Integer.toString(cuisine));
         startActivity(intent);
     }
 
@@ -114,6 +122,8 @@ public class food_categories extends AppCompatActivity {
         Button button = (Button) v;
         Intent intent = new Intent(this, LoadingPage.class);
         v.findViewById(R.id.confirm);
+        cuisine = 168;
+        setCuisine(this, Integer.toString(cuisine));
         startActivity(intent);
     }
 
@@ -122,6 +132,8 @@ public class food_categories extends AppCompatActivity {
         Button button = (Button) v;
         Intent intent = new Intent(this, LoadingPage.class);
         v.findViewById(R.id.confirm);
+        cuisine = 25;
+        setCuisine(this, Integer.toString(cuisine));
         startActivity(intent);
     }
 
@@ -130,6 +142,8 @@ public class food_categories extends AppCompatActivity {
         Button button = (Button) v;
         Intent intent = new Intent(this, LoadingPage.class);
         v.findViewById(R.id.confirm);
+        cuisine = 100;
+        setCuisine(this, Integer.toString(cuisine));
         startActivity(intent);
     }
 
@@ -138,6 +152,8 @@ public class food_categories extends AppCompatActivity {
         Button button = (Button) v;
         Intent intent = new Intent(this, LoadingPage.class);
         v.findViewById(R.id.confirm);
+        cuisine = 40;
+        setCuisine(this, Integer.toString(cuisine));
         startActivity(intent);
     }
 
@@ -146,6 +162,8 @@ public class food_categories extends AppCompatActivity {
         Button button = (Button) v;
         Intent intent = new Intent(this, LoadingPage.class);
         v.findViewById(R.id.confirm);
+        cuisine = 45;
+        setCuisine(this, Integer.toString(cuisine));
         startActivity(intent);
     }
 
@@ -154,6 +172,8 @@ public class food_categories extends AppCompatActivity {
         Button button = (Button) v;
         Intent intent = new Intent(this, LoadingPage.class);
         v.findViewById(R.id.confirm);
+        cuisine = 233;
+        setCuisine(this, Integer.toString(cuisine));
         startActivity(intent);
     }
 
@@ -162,6 +182,8 @@ public class food_categories extends AppCompatActivity {
         Button button = (Button) v;
         Intent intent = new Intent(this, LoadingPage.class);
         v.findViewById(R.id.confirm);
+        cuisine = 148;
+        setCuisine(this, Integer.toString(cuisine));
         startActivity(intent);
     }
 
@@ -170,6 +192,8 @@ public class food_categories extends AppCompatActivity {
         Button button = (Button) v;
         Intent intent = new Intent(this, LoadingPage.class);
         v.findViewById(R.id.confirm);
+        cuisine = 55;
+        setCuisine(this, Integer.toString(cuisine));
         startActivity(intent);
     }
 
@@ -178,6 +202,8 @@ public class food_categories extends AppCompatActivity {
         Button button = (Button) v;
         Intent intent = new Intent(this, ListOfRestaurantsActivity.class);
         v.findViewById(R.id.confirm);
+        cuisine = 60;
+        setCuisine(this, Integer.toString(cuisine));
         startActivity(intent);
     }
 
@@ -186,6 +212,8 @@ public class food_categories extends AppCompatActivity {
         Button button = (Button) v;
         Intent intent = new Intent(this, LoadingPage.class);
         v.findViewById(R.id.confirm);
+        cuisine = 67;
+        setCuisine(this, Integer.toString(cuisine));
         startActivity(intent);
     }
 
@@ -194,6 +222,8 @@ public class food_categories extends AppCompatActivity {
         Button button = (Button) v;
         Intent intent = new Intent(this, LoadingPage.class);
         v.findViewById(R.id.confirm);
+        cuisine = 70;
+        setCuisine(this, Integer.toString(cuisine));
         startActivity(intent);
     }
 
@@ -202,6 +232,8 @@ public class food_categories extends AppCompatActivity {
         Button button = (Button) v;
         Intent intent = new Intent(this, LoadingPage.class);
         v.findViewById(R.id.confirm);
+        cuisine = 73;
+        setCuisine(this, Integer.toString(cuisine));
         startActivity(intent);
     }
     public void pizzabutton(View v)
@@ -209,6 +241,8 @@ public class food_categories extends AppCompatActivity {
         Button button = (Button) v;
         Intent intent = new Intent(this, LoadingPage.class);
         v.findViewById(R.id.confirm);
+        cuisine = 82;
+        setCuisine(this, Integer.toString(cuisine));
         startActivity(intent);
     }
 
@@ -217,6 +251,8 @@ public class food_categories extends AppCompatActivity {
         Button button = (Button) v;
         Intent intent = new Intent(this, LoadingPage.class);
         v.findViewById(R.id.confirm);
+        cuisine = 83;
+        setCuisine(this, Integer.toString(cuisine));
         startActivity(intent);
     }
     public void southernbutton(View v)
@@ -224,6 +260,8 @@ public class food_categories extends AppCompatActivity {
         Button button = (Button) v;
         Intent intent = new Intent(this, LoadingPage.class);
         v.findViewById(R.id.confirm);
+        cuisine = 471;
+        setCuisine(this, Integer.toString(cuisine));
         startActivity(intent);
     }
 
@@ -232,6 +270,8 @@ public class food_categories extends AppCompatActivity {
         Button button = (Button) v;
         Intent intent = new Intent(this, LoadingPage.class);
         v.findViewById(R.id.confirm);
+        cuisine = 95;
+        setCuisine(this, Integer.toString(cuisine));
         startActivity(intent);
     }
     public void vegetarianbutton(View v)
@@ -239,9 +279,22 @@ public class food_categories extends AppCompatActivity {
         Button button = (Button) v;
         Intent intent = new Intent(this, LoadingPage.class);
         v.findViewById(R.id.confirm);
+        cuisine = 308;
+        setCuisine(this, Integer.toString(cuisine));
         startActivity(intent);
     }
-/*    enum OffersOrder {("cuisines":"seafood");
+
+    public static void setCuisine(Context context, String cuisine)
+    {
+        SharedPreferences prefs5 = context.getSharedPreferences("Cuisine", 0);
+        SharedPreferences.Editor editor5 = prefs5.edit();
+        editor5.putString("cuisine",cuisine);
+        editor5.apply();
+    }
+
+
+
+    /*    enum OffersOrder {("cuisines":"seafood");
         String sound;
         OffersOrder(String s) { sound = s; }
     }
