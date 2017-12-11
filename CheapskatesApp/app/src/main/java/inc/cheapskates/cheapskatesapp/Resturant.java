@@ -13,7 +13,7 @@ public class Resturant implements Serializable {
     String name;
 
     String url;
-
+    
     public String getRestaurant() {
         return restaurant;
     }
@@ -53,4 +53,5 @@ public class Resturant implements Serializable {
     public void setUrl(String url) {
         this.url = url;
     }
+
 }
