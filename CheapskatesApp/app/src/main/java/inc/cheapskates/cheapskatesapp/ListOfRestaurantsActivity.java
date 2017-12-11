@@ -31,6 +31,7 @@ public class ListOfRestaurantsActivity extends AppCompatActivity {
 
         //adding the adapter to listview
         listView.setAdapter(adapter);
+
         //Getting intent from ListView
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -75,6 +76,4 @@ public class ListOfRestaurantsActivity extends AppCompatActivity {
         v.findViewById(R.id.back_button);
         startActivity(intent);
     }
-
-    //Stores
 }
