@@ -18,6 +18,7 @@ public class resturant_info extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resturant_info);
+        /*
         resturantList = (List<Resturant>) getIntent().getSerializableExtra("listResturant");
         Resturant restaurant = getResturant(getId(this), resturantList);
         TextView rest_name = findViewById(R.id.resturantname);
@@ -28,6 +29,7 @@ public class resturant_info extends AppCompatActivity {
         rest_locality.setText(restaurant.getLocality());
         TextView rest_rating = findViewById(R.id.resturantrating);
         rest_rating.setText(restaurant.getRating());
+        */
     }
 
 
