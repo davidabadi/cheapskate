@@ -37,7 +37,8 @@
         android:textColor="@color/white"
         android:textSize="10sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/food_cate" />
+        app:layout_constraintTop_toBottomOf="@+id/food_cate"
+        android:layout_marginLeft="16dp" />
 
     <Button
         android:id="@+id/Bakery"
@@ -256,7 +257,8 @@
         android:textColor="@color/white"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/food_cate" />
+        app:layout_constraintTop_toBottomOf="@+id/food_cate"
+        android:layout_marginRight="16dp" />
 
     <Button
         android:id="@+id/Pizza"
@@ -350,14 +352,9 @@
 
     <Button
         android:id="@+id/home_button"
-<<<<<<< HEAD
         android:layout_width="82dp"
         android:layout_height="40dp"
         android:layout_marginBottom="8dp"
-=======
-        android:layout_width="65dp"
-        android:layout_height="45dp"
->>>>>>> c5a55b07b9749003eb08eed0a42345d5a603a8dd
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
@@ -371,7 +368,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/ic_launcher_foreground" />
+        app:srcCompat="@mipmap/ic_launcher_foreground"
+        tools:ignore="VectorDrawableCompat" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -383,6 +381,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/ic_launcher_foreground" />
+        app:srcCompat="@mipmap/ic_launcher_foreground"
+        tools:ignore="VectorDrawableCompat" />
 
 </android.support.constraint.ConstraintLayout>

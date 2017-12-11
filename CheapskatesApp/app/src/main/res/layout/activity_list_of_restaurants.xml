@@ -137,29 +137,21 @@
 
     <Button
         android:id="@+id/back_button"
-<<<<<<< HEAD
-        android:layout_width="72dp"
-        android:layout_height="41dp"
         android:layout_marginEnd="8dp"
-=======
         android:layout_width="65dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
->>>>>>> c5a55b07b9749003eb08eed0a42345d5a603a8dd
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:backgroundTint="@color/common_google_signin_btn_text_light_focused"
         android:onClick="backbutton"
         android:text="Back"
-<<<<<<< HEAD
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.027"
-=======
         android:textColor="@android:color/white"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
->>>>>>> c5a55b07b9749003eb08eed0a42345d5a603a8dd
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/toolbar"
         app:srcCompat="?attr/actionModeCloseDrawable" />
