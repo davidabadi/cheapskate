@@ -200,7 +200,7 @@ public class food_categories extends AppCompatActivity {
     public void japanesebutton(View v)
     {
         Button button = (Button) v;
-        Intent intent = new Intent(this, ListOfRestaurantsActivity.class);
+        Intent intent = new Intent(this, LoadingPage.class);
         v.findViewById(R.id.confirm);
         cuisine = 60;
         setCuisine(this, Integer.toString(cuisine));
