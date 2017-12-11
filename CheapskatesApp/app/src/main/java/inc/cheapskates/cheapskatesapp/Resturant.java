@@ -2,9 +2,6 @@ package inc.cheapskates.cheapskatesapp;
 
 import java.io.Serializable;
 
-/**
- * Created by PRIYA on 10-Dec-17.
- */
 
 public class Resturant implements Serializable {
     String restaurant;
