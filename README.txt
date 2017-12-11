@@ -12,9 +12,9 @@ REQUIREMENTS
 
 Android 8.1 device with an Internet connection and GPS.
 
-INSTALLATION
+INSTALLATION & RUNNING
 
-Install as you would normally an android app.
+Open the "CheapskateApp" file in Android Studios. Once selected, test the app in the emulator. 
 
 CONFIGURATION
 
