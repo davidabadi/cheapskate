@@ -18,14 +18,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        super.onCreate(savedInstanceState);//gets the lat and lon from the bundle.
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
             lat = bundle.getString("lat");
             lon = bundle.getString("lon");
         }
         setContentView(R.layout.activity_maps);
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+        // Obtain the SupportMapFragment and get notified when the map is ready to be used. Do not change.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
@@ -36,7 +36,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      * Manipulates the map once available.
      * This callback is triggered when the map is ready to be used.
      * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
+     * we just add a marker at the Restaurant.
      * If Google Play services is not installed on the device, the user will be prompted to install
      * it inside the SupportMapFragment. This method will only be triggered once the user has
      * installed Google Play services and returned to the app.
@@ -46,9 +46,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap = googleMap;
 
         // Add a marker at Restaurant and move the camera
-        LatLng restaurant = new LatLng(Double.parseDouble(lat), Double.parseDouble(lon));
-        mMap.addMarker(new MarkerOptions().position(restaurant).title(""));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(restaurant, 18));
+        LatLng restaurant = new LatLng(Double.parseDouble(lat), Double.parseDouble(lon));//puts the latitude and longitude of the restaurant in restaurant
+        mMap.addMarker(new MarkerOptions().position(restaurant).title(""));//adds a marker at location restaurant
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(restaurant, 18));// moves the camera at location restaurant and sets the zoom level
 
     }
 }
