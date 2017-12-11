@@ -14,6 +14,8 @@ import java.util.List;
 
 public class resturant_info extends AppCompatActivity {
     List<Resturant> resturantList;
+    String lat;
+    String lon;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +34,8 @@ public class resturant_info extends AppCompatActivity {
             rest_locality.setText(restaurant.getLocality());
             TextView rest_rating = findViewById(R.id.resturantrating);
             rest_rating.setText(restaurant.getRating());
+            lat = restaurant.getLatitude();
+            lon = restaurant.getLongitude();
         }
         /*
         String id = getIntent().getExtras().getParcelable("id");
@@ -70,7 +74,9 @@ public class resturant_info extends AppCompatActivity {
     public void MapButton(View v)
     {
         Button button = (Button) v;
-        Intent intent = new Intent(this, MapsActivity.class); //change this
+        Intent intent = new Intent(this, MapsActivity.class);//change this
+        intent.putExtra("lat",lat);
+        intent.putExtra("lon",lon);
         v.findViewById(R.id.MapButton);
         startActivity(intent);
     }
