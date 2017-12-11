@@ -14,7 +14,7 @@ Android 8.1 device with an Internet connection and GPS.
 
 INSTALLATION & RUNNING
 
-Open the "CheapskateApp" file in Android Studios. Once selected, test the app in the emulator. 
+Open the "CheapskateApp" file in Android Studios. Once selected, test the app in the emulator. HOWEVER, in order for the location services to work properly, you MUST use an external device (such as an android phone). Just connect the phone to your computer and run the configuration.
 
 CONFIGURATION
 
