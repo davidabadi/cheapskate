@@ -107,5 +107,11 @@ public class resturant_info extends AppCompatActivity {
         SharedPreferences prefs = context.getSharedPreferences("Id",0);
         return prefs.getString("id","");
     }
+    public void backbutton(View v) {
+        Button button = (Button) v;
+        Intent intent = new Intent(this, ListOfRestaurantsActivity.class);
+        v.findViewById(R.id.back_button);
+        startActivity(intent);
+    }
 
 }
