@@ -6,81 +6,6 @@
     android:layout_height="match_parent"
     tools:context="inc.cheapskates.cheapskatesapp.food_categories">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar4"
-        android:layout_width="500dp"
-        android:layout_height="52dp"
-        android:background="@color/darkblue"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:contentDescription="@string/minilogo"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar4"
-        app:layout_constraintStart_toStartOf="@+id/toolbar4"
-        app:layout_constraintTop_toTopOf="@+id/toolbar4"
-        app:srcCompat="@drawable/icon" />
-
-    <TextView
-        android:id="@+id/budgettag2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="68dp"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/budgetView"
-        android:textColor="@color/white"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar4"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/toolbar4" />
-
-    <EditText
-        android:id="@+id/yourbudgettag2"
-        android:layout_width="100dp"
-        android:layout_height="35dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:background="@color/white"
-        android:ems="10"
-        android:hint="@string/upperBudget"
-        android:inputType="number|numberDecimal"
-        android:textAlignment="center"
-        android:textColor="@color/seafoam"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar4"
-        app:layout_constraintStart_toEndOf="@+id/budgettag2"
-        app:layout_constraintTop_toTopOf="@+id/toolbar4" />
-
-    <Button
-        android:id="@+id/gobutton1"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:background="@color/orange"
-        android:onClick="gobutton"
-        android:text="@string/go"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar4"
-        app:layout_constraintStart_toEndOf="@+id/yourbudgettag2"
-        app:layout_constraintTop_toTopOf="@+id/toolbar4" />
-
     <TextView
         android:id="@+id/food_cate"
         android:layout_width="120dp"
@@ -96,17 +21,215 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.088" />
+        app:layout_constraintVertical_bias="0.011" />
 
-    <ListView
-        android:id="@+id/foodList"
-        android:layout_width="382dp"
-        android:layout_height="459dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+    <Button
+        android:id="@+id/American"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="60dp"
+        android:text="@string/american"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/Bakery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/bakery"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/American" />
+
+    <Button
+        android:id="@+id/Beverages"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/beverages"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Bakery" />
+
+    <Button
+        android:id="@+id/Breakfast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/breakfast"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Beverages" />
+
+    <Button
+        android:id="@+id/Burger"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/burger"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Breakfast" />
+
+    <Button
+        android:id="@+id/Chinese"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/chinese"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Burger" />
+
+    <Button
+        android:id="@+id/Dessert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/dessert"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Chinese" />
+
+    <Button
+        android:id="@+id/FastFood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="60dp"
+        android:text="@string/fast_food"
+        app:layout_constraintStart_toEndOf="@+id/American"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/French"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/french"
+        app:layout_constraintStart_toEndOf="@+id/Bakery"
+        app:layout_constraintTop_toBottomOf="@+id/FastFood" />
+
+    <Button
+        android:id="@+id/IceCream"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/icecream"
+        app:layout_constraintStart_toEndOf="@+id/Beverages"
+        app:layout_constraintTop_toBottomOf="@+id/French" />
+
+    <Button
+        android:id="@+id/Indian"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/indian"
+        app:layout_constraintStart_toEndOf="@+id/Breakfast"
+        app:layout_constraintTop_toBottomOf="@+id/IceCream" />
+
+    <Button
+        android:id="@+id/Italian"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/italian"
+        app:layout_constraintStart_toEndOf="@+id/Burger"
+        app:layout_constraintTop_toBottomOf="@+id/Indian" />
+
+    <Button
+        android:id="@+id/Korean"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/korean"
+        app:layout_constraintStart_toEndOf="@+id/Chinese"
+        app:layout_constraintTop_toBottomOf="@+id/Italian" />
+
+    <Button
+        android:id="@+id/Mediterranean"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/mediterranean"
+        app:layout_constraintStart_toEndOf="@+id/Dessert"
+        app:layout_constraintTop_toBottomOf="@+id/Korean" />
+
+    <Button
+        android:id="@+id/Mexican"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="60dp"
+        android:text="@string/mexican"
+        app:layout_constraintStart_toEndOf="@+id/FastFood"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/Pizza"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/pizza"
+        app:layout_constraintStart_toEndOf="@+id/French"
+        app:layout_constraintTop_toBottomOf="@+id/Mexican" />
+
+    <Button
+        android:id="@+id/Seafood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/seafood"
+        app:layout_constraintStart_toEndOf="@+id/IceCream"
+        app:layout_constraintTop_toBottomOf="@+id/Pizza" />
+
+    <Button
+        android:id="@+id/Southern"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/southern"
+        app:layout_constraintStart_toEndOf="@+id/Indian"
+        app:layout_constraintTop_toBottomOf="@+id/Seafood" />
+
+    <Button
+        android:id="@+id/Japanese"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/japanese"
+        app:layout_constraintStart_toEndOf="@+id/Italian"
+        app:layout_constraintTop_toBottomOf="@+id/Southern" />
+
+    <Button
+        android:id="@+id/Thai"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/thai"
+        app:layout_constraintStart_toEndOf="@+id/Korean"
+        app:layout_constraintTop_toBottomOf="@+id/Japanese" />
+
+    <Button
+        android:id="@+id/Vegetarian"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/vegetarian"
+        app:layout_constraintStart_toEndOf="@+id/Mediterranean"
+        app:layout_constraintTop_toBottomOf="@+id/Thai" />
 
 </android.support.constraint.ConstraintLayout>

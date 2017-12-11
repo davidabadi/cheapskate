@@ -75,28 +75,7 @@ public class food_categories extends AppCompatActivity {
 
     String category;
     //sets up the go button to read from the text box and change budget
-    public void gobutton(View v)
-    {
-        Button button = (Button) v;
-        Intent intent = new Intent(this, LoadingPage.class); //change this
-        v.findViewById(R.id.gobutton1);
-        mybudget = (EditText) findViewById(R.id.yourbudgettag2);
-        if(mybudget.getText().toString().trim().length() == 0){//if statement to prevent crash when nothing is entered for budget
-            Intent new_intent = new Intent(this, Restaurant_no_name.class);
-            startActivity(new_intent);
-            return;
-        }
-        setBudget(this, mybudget.getText().toString());
-        startActivity(intent);
-    }
-    //setBudget function
-    public static void setBudget(Context context, String budget)
-    {
-        SharedPreferences prefs = context.getSharedPreferences("mybudget", 0);
-        SharedPreferences.Editor editor = prefs.edit();
-        editor.putString("budget",budget);
-        editor.apply();
-    }
+
 
     public void bagelsbutton(View v)
     {
