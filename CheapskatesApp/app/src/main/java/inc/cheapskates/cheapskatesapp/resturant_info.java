@@ -92,7 +92,6 @@ public class resturant_info extends AppCompatActivity {
             }
         }
 
-
         return null;
     }
 
