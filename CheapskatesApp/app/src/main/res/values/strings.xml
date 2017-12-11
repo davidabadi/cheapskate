@@ -40,5 +40,5 @@
     <string name="dialoguedesc">Pop_up Window</string>
     <string name="popuptext">Your budget is too large.</string>
     <string name="popuptext2">This app is only for Cheapskates.</string>
-    <string name="show_in_maps">Show in maps.</string>
+    <string name="show_in_maps">Show in maps</string>
 </resources>
