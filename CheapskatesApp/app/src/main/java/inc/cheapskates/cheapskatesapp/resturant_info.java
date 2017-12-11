@@ -22,23 +22,23 @@ public class resturant_info extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resturant_info);
-        String id;
-        Bundle bundle = getIntent().getExtras();
-        if (bundle != null){
-            id = bundle.getString("id");
-            resturantList = (List<Resturant>) getIntent().getSerializableExtra("restaurantsList");
-            Resturant restaurant = getResturant(id, resturantList);
-            TextView rest_name = findViewById(R.id.resturantname);
-            rest_name.setText(restaurant.getName());
-            TextView rest_address = findViewById(R.id.RestaurantAddress);
-            rest_address.setText(restaurant.getAddress());
-            TextView rest_locality = findViewById(R.id.resturantlocality2);
-            rest_locality.setText(restaurant.getLocality());
-            TextView rest_rating = findViewById(R.id.resturantrating);
-            rest_rating.setText(restaurant.getRating());
-            lat = restaurant.getLatitude();
-            lon = restaurant.getLongitude();
-        }
+
+        //Getting the list of restaurant and id number from last intent
+        String id = getIntent().getExtras().getString("id");
+        resturantList = (List<Resturant>) getIntent().getSerializableExtra("restaurantsList");
+        //Comparing the id with the list of restaurants to get the specific restaurant
+        Resturant restaurant = getResturant(id, resturantList);
+        //Setting the text for the specific restaurant
+        TextView rest_name = findViewById(R.id.resturantname);
+        rest_name.setText(restaurant.getName());
+        TextView rest_address = findViewById(R.id.RestaurantAddress);
+        rest_address.setText(restaurant.getAddress());
+        TextView rest_locality = findViewById(R.id.resturantlocality2);
+        rest_locality.setText(restaurant.getLocality());
+        TextView rest_rating = findViewById(R.id.resturantrating);
+        rest_rating.setText(restaurant.getRating());
+        lat = restaurant.getLatitude();
+        lon = restaurant.getLongitude();
     }
 
 
@@ -90,6 +90,7 @@ public class resturant_info extends AppCompatActivity {
         editor.apply();
     }
 
+    //Searching for a specific restaurant in the list of restaurants
     Resturant getResturant(String id, List<Resturant> resturantList){
         for(int i = 0; i < resturantList.size(); i++){
             if(resturantList.get(i).getId().equals(id)){
@@ -101,11 +102,9 @@ public class resturant_info extends AppCompatActivity {
         return null;
     }
 
-    public static String getId(Context context)
-    {
-        SharedPreferences prefs = context.getSharedPreferences("Id",0);
-        return prefs.getString("id","");
-    }
+
+
+    //Setting up the back button to go to list of restaurants activity
     public void back(View v) {
         Button button = (Button) v;
         v.findViewById(R.id.back_button2);
