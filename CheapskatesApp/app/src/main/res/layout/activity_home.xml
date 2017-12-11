@@ -6,6 +6,13 @@
     android:layout_height="match_parent"
     tools:context="inc.cheapskates.cheapskatesapp.HomeActivity">
 
+    <LinearLayout
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_width="0px"
+        android:layout_height="0px"/>
+
+
     <TextView
         android:id="@+id/askbudget"
         android:layout_width="wrap_content"
