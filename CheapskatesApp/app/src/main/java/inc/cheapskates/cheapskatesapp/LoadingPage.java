@@ -123,6 +123,11 @@ public class LoadingPage extends AppCompatActivity {
                                     jsonObjectRest.getString("name");
                                     resturant.setId(jsonObjectRest.getString("id"));
                                     resturant.setName(jsonObjectRest.getString("name"));
+                                    resturant.setLatitude(jsonObjectRest.getJSONObject("location").getString("latitude"));
+                                    resturant.setLongitude(jsonObjectRest.getJSONObject("location").getString("longitude"));
+                                    resturant.setAddress(jsonObjectRest.getJSONObject("location").getString("address"));
+                                    resturant.setRating(jsonObjectRest.getJSONObject("user_rating").getString("rating_text"));
+                                    resturant.setRating(jsonObjectRest.getJSONObject("location").getString("locality"));
 
                                     resturantList.add(resturant);
                                 }
