@@ -76,19 +76,6 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <!-- Rest of the page-->
-    <TextView
-        android:id="@+id/ratingtag"
-        android:layout_width="wrap_content"
-        android:layout_height="28dp"
-        android:layout_marginStart="70dp"
-        android:layout_marginLeft="70dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/ratingtag"
-        android:textColor="@color/darkblue"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/localitytag2"
-        tools:text="Rating:" />
 
     <TextView
         android:id="@+id/resturantname"
@@ -96,11 +83,11 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="sans-serif"
         android:text="@string/resturantname"
         android:textColor="@color/darkblue"
-        android:textSize="30sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -113,24 +100,25 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
         android:text="@string/resturantrating"
         android:textAlignment="center"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/ratingtag"
-        app:layout_constraintTop_toBottomOf="@+id/resturantlocality2" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ratingtag" />
 
     <TextView
         android:id="@+id/addresstag"
-        android:layout_width="89dp"
-        android:layout_height="31dp"
-        android:layout_marginStart="70dp"
-        android:layout_marginLeft="70dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:text="@string/addresstag"
         android:textColor="@color/darkblue"
         android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/resturantname"
         tools:test="Address: "
@@ -158,13 +146,13 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
         android:text="@string/resturantaddress"
         android:textAlignment="center"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/addresstag"
-        app:layout_constraintTop_toBottomOf="@+id/resturantname" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addresstag" />
 
     <Button
         android:id="@+id/MapButton"
@@ -173,7 +161,7 @@
         android:layout_height="100dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="496dp"
+        android:layout_marginTop="460dp"
         android:background="@color/orange"
         android:onClick="MapButton"
         android:text="@string/show_in_maps"
@@ -193,26 +181,27 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
         android:text="Locality"
         android:textAlignment="center"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/localitytag2"
-        app:layout_constraintTop_toBottomOf="@+id/RestaurantAddress" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/localitytag2" />
 
     <TextView
         android:id="@+id/localitytag2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="70dp"
-        android:layout_marginLeft="70dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:text="Locality: "
+        android:text="Locality:"
         android:textColor="@color/darkblue"
         android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addresstag" />
+        app:layout_constraintTop_toBottomOf="@+id/RestaurantAddress" />
 
     <Button
         android:id="@+id/back_button2"
@@ -227,7 +216,7 @@
         android:text="Back"
         android:textColor="@color/white"
         android:textSize="12sp"
-        android:onClick="backbutton"
+        android:onClick="back"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/toolbar3" />
@@ -238,11 +227,26 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="252dp"
+        android:layout_marginTop="328dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/resturantname"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/icon" />
+
+    <TextView
+        android:id="@+id/ratingtag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/ratingtag"
+        android:textColor="@color/darkblue"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resturantlocality2"
+        tools:text="Rating:" />
 
 
 </android.support.constraint.ConstraintLayout>

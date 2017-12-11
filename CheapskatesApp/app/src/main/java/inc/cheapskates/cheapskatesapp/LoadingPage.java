@@ -57,11 +57,11 @@ public class LoadingPage extends AppCompatActivity {
         resturantList = new ArrayList<>();
 
         //Displays the code in a TextView - For TESTING PURPOSES ONLY
-        TextView latitude_view = findViewById(R.id.latview);
-        latitude_view.setText(getLatitude(this));
+        //TextView latitude_view = findViewById(R.id.latview);
+        //latitude_view.setText(getLatitude(this));
 
-        TextView longitude_view = findViewById(R.id.lonview);
-        longitude_view.setText(getLongitude(this));
+        //TextView longitude_view = findViewById(R.id.lonview);
+        //longitude_view.setText(getLongitude(this));
 
         //stores longitude and latitude
         String longitude = getLongitude(this);

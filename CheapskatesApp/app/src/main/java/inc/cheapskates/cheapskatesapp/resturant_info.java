@@ -1,5 +1,6 @@
 package inc.cheapskates.cheapskatesapp;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -66,6 +67,15 @@ public class resturant_info extends AppCompatActivity {
             startActivity(new_intent);
             return;
         }
+        else if(mybudget.getText().toString().trim().length() > 3){
+            PopupWindow();
+            return;
+        }
+        else if(Integer.parseInt(mybudget.getText().toString().trim()) == 0){
+            Intent intent19 = new Intent(this, Restaurant_no_name.class);
+            startActivity(intent19);
+            return;
+        }
         setBudget(this, mybudget.getText().toString());
         startActivity(intent);
     }
@@ -106,11 +116,34 @@ public class resturant_info extends AppCompatActivity {
         SharedPreferences prefs = context.getSharedPreferences("Id",0);
         return prefs.getString("id","");
     }
-    public void backbutton(View v) {
+    public void back(View v) {
         Button button = (Button) v;
         v.findViewById(R.id.back_button2);
-        Intent intent = new Intent(resturant_info.this, ListOfRestaurantsActivity.class);
+        Intent intent = new Intent(this, food_categories.class);
         startActivity(intent);
+    }
+    Dialog MyDialog;
+    Button closebutton;
+
+    //Method for programming the buttons in pop-up
+    public void PopupWindow()
+    {
+        MyDialog = new Dialog(resturant_info.this);
+        MyDialog.setContentView(R.layout.popupwindow);
+
+
+        closebutton = (Button)MyDialog.findViewById(R.id.close);
+        closebutton.setEnabled(true);
+
+        //When button is clicked the Dialog closes
+        closebutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MyDialog.cancel();
+            }
+        });
+        //Have the Diaglog show up
+        MyDialog.show();
     }
 
 }

@@ -27,8 +27,6 @@ public class HomeActivity extends AppCompatActivity {
     static final int REQUEST_LOCATION = 1;
     LocationManager locationManager;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,7 +67,6 @@ public class HomeActivity extends AppCompatActivity {
         }
     }
 
-
     //Declare budget edittext
     private EditText mybudget;
 
@@ -92,6 +89,11 @@ public class HomeActivity extends AppCompatActivity {
         else if(mybudget.getText().toString().trim().length() > 3)
         {
             PopupWindow();
+        }
+        else if(Integer.parseInt(mybudget.getText().toString().trim()) == 0){
+            Intent intent6 = new Intent(this, Restaurant_no_name.class);
+            startActivity(intent6);
+            return;
         }
         else
         {
