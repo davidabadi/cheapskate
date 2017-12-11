@@ -7,28 +7,12 @@
     <!--  this is the toolbar -->
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
-        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="52dp"
         android:background="@color/darkblue"
         android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme" />
-
-    <TextView
-        android:id="@+id/budgetRange"
-        android:layout_width="0dp"
-        android:visibility="gone"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/budgetView"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="22sp"
-        android:textStyle="bold" />
+        android:theme="?attr/actionBarTheme"
+        android:visibility="visible" />
 
     <ImageView
         android:id="@+id/iconview"
@@ -36,10 +20,10 @@
         android:layout_height="35dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
-        android:visibility="gone"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:contentDescription="@string/minilogo"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/toolbar"
@@ -47,14 +31,12 @@
         app:srcCompat="@drawable/icon" />
 
     <EditText
-        android:visibility="gone"
         android:id="@+id/upperBudget1"
         android:layout_width="100dp"
         android:layout_height="35dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="8dp"
+        android:layout_alignTop="@+id/budgetRange"
+        android:layout_toEndOf="@+id/budgetRange"
+        android:layout_toRightOf="@+id/budgetRange"
         android:background="@color/white"
         android:ems="10"
         android:hint="@string/upperBudget"
@@ -62,22 +44,38 @@
         android:textAlignment="center"
         android:textColor="@color/seafoam"
         android:textSize="14sp"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintStart_toEndOf="@+id/budgetRange"
         app:layout_constraintTop_toTopOf="@+id/toolbar"
         app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/budgetRange"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_alignTop="@+id/iconview"
+        android:layout_marginLeft="27dp"
+        android:layout_marginStart="27dp"
+        android:layout_toEndOf="@+id/iconview"
+        android:layout_toRightOf="@+id/iconview"
+        android:text="@string/budget"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
     <!--  rest of the page -->
     <TextView
-        android:visibility="gone"
         android:id="@+id/restaurants"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_alignEnd="@+id/upperBudget1"
+        android:layout_alignRight="@+id/upperBudget1"
+        android:layout_below="@+id/toolbar"
         android:text="@string/resturantname"
         android:textColor="@color/darkblue"
         android:textSize="24sp"
+        android:textStyle="bold"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
@@ -87,22 +85,26 @@
         android:id="@+id/resturantList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="20dp" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/restaurants"
+        android:layout_marginTop="14dp" />
 
     <Button
         android:id="@+id/gobutton2"
         android:layout_width="45dp"
         android:layout_height="45dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_alignBaseline="@+id/budgetRange"
+        android:layout_alignBottom="@+id/budgetRange"
+        android:layout_marginLeft="21dp"
+        android:layout_marginStart="21dp"
+        android:layout_toEndOf="@+id/upperBudget1"
+        android:layout_toRightOf="@+id/upperBudget1"
         android:background="@color/orange"
         android:onClick="gobutton2"
         android:text="@string/go"
-        android:visibility="gone"
         android:textColor="@color/white"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/upperBudget1"

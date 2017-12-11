@@ -13,7 +13,7 @@ public class Resturant implements Serializable {
     String name;
 
     String url;
-    
+
     public String getRestaurant() {
         return restaurant;
     }
