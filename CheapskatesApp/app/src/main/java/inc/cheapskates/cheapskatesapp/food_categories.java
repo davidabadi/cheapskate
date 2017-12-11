@@ -196,6 +196,16 @@ public class food_categories extends AppCompatActivity {
         category = "seafood";
     }
 
+    public static void setCategory(Context context, Integer category)
+    {
+        SharedPreferences prefs3 = context.getSharedPreferences("categoryNum", 0);
+        SharedPreferences.Editor editor3 = prefs3.edit();
+        editor3.putString("foodCategory", String.valueOf(category));
+        editor3.apply();
+    }
+
+    
+
 /*    enum OffersOrder {("cuisines":"seafood");
         String sound;
         OffersOrder(String s) { sound = s; }

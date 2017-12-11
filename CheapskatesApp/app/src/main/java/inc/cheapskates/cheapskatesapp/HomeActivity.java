@@ -78,7 +78,7 @@ public class HomeActivity extends AppCompatActivity {
     public void confirmbutton(View v)
     {
         Button button = (Button) v;
-        Intent intent = new Intent(this, LoadingPage.class); //change this
+        Intent intent = new Intent(this, food_categories.class); //change this
         v.findViewById(R.id.confirm);
         //if statement to prevent crash when nothing is entered for budget
         mybudget = (EditText) findViewById(R.id.budget);
@@ -105,7 +105,7 @@ public class HomeActivity extends AppCompatActivity {
     public void fivebutton(View v)
     {
         Button button = (Button) v;
-        Intent intent = new Intent(this, LoadingPage.class);
+        Intent intent = new Intent(this, food_categories.class);
         v.findViewById(R.id.five);
         setBudget(this, Integer.toString(5));//using setBudget to set budget to 5
         setLocation(this, Double.toString(Latitude), Double.toString(Longitude));
@@ -116,7 +116,7 @@ public class HomeActivity extends AppCompatActivity {
     public void tenbutton(View v)
     {
         Button button = (Button) v;
-        Intent intent = new Intent(this, LoadingPage.class);
+        Intent intent = new Intent(this, food_categories.class);
         v.findViewById(R.id.ten);
         setBudget(this, Integer.toString(15));//using setBudget to set budget to 15
         setLocation(this, Double.toString(Latitude), Double.toString(Longitude));
@@ -127,7 +127,7 @@ public class HomeActivity extends AppCompatActivity {
     public void fifbutton(View v)
     {
         Button button = (Button) v;
-        Intent intent = new Intent(this, LoadingPage.class);
+        Intent intent = new Intent(this, food_categories.class);
         v.findViewById(R.id.fifteen);
         setBudget(this, Integer.toString(25));//using setBudget to set budget to 25
         setLocation(this, Double.toString(Latitude), Double.toString(Longitude));
