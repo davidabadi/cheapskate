@@ -6,6 +6,8 @@ import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -21,16 +23,24 @@ public class ListOfRestaurantsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_of_restaurants);
-
         listView = findViewById(R.id.resturantList);
 
         resturantList = (List<Resturant>) getIntent().getSerializableExtra("listResturant");
-
 
         ListViewAdapter adapter = new ListViewAdapter(getApplicationContext(), resturantList);
 
         //adding the adapter to listview
         listView.setAdapter(adapter);
+
+        //Getting intent from ListView
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent it = new Intent(ListOfRestaurantsActivity.this, resturant_info.class);
+                it.putExtra("id",resturantList.get(position).getId());
+                startActivity(it);
+            }
+        });
 
     }
 

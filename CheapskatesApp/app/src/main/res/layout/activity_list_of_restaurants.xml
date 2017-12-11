@@ -7,6 +7,13 @@
     tools:context="inc.cheapskates.cheapskatesapp.ListOfRestaurantsActivity">
     <!--  this is the toolbar -->
 
+    <LinearLayout
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_width="0px"
+        android:layout_height="0px"/>
+
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -62,6 +69,7 @@
         android:layout_alignTop="@+id/iconview"
         android:layout_marginBottom="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_toEndOf="@+id/iconview"
         android:layout_toRightOf="@+id/iconview"
@@ -133,6 +141,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:backgroundTint="@color/common_google_signin_btn_text_light_focused"
         android:onClick="backbutton"
