@@ -14,9 +14,7 @@ Android 8.1 device with an Internet connection and GPS.
 
 INSTALLATION & RUNNING
 
-Open the "CheapskateApp" file in Android Studios. Once selected, test the app in the emulator. HOWEVER, in order for the location
-services to work properly, you MUST use an external device (such as an android phone). Just connect the phone to your computer and run 
-the configuration.
+Open the "CheapskateApp" file in Android Studios. Once selected, test the app in the emulator. HOWEVER, in order for the location services to work properly, you MUST use an external device (such as an android phone). Just connect the phone to your computer and run the configuration.
 
 CONFIGURATION
 
@@ -24,7 +22,20 @@ CONFIGURATION
 - Enable GPS
 - Allow location services for Cheapskates.
 
-TROUBLESHOOTING & FAQ
+HOW TO USE CHEAPSKATES
+
+- Open Cheapskates
+- Allow location Services
+- Enter Budget between 1 and 999, or select one of the three pre-determined budgets
+- Select Cuisine
+- A list of restaurants will appear
+- Pick the restaurant that is the most suited for you
+- If you want the location of the restaurant, press the “show in maps” button
+
+TROUBLESHOOTING
+
+The emulator does not show the google maps, therefore it is best to use an android device.
+
 
 AUTHORS
 
