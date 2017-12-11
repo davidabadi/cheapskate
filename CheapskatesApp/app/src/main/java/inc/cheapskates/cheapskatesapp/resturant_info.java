@@ -8,13 +8,26 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+
+import java.util.List;
 
 public class resturant_info extends AppCompatActivity {
-
+    List<Resturant> resturantList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resturant_info);
+        resturantList = (List<Resturant>) getIntent().getSerializableExtra("listResturant");
+        Resturant restaurant = getResturant(getId(this), resturantList);
+        TextView rest_name = findViewById(R.id.resturantname);
+        rest_name.setText(restaurant.getName());
+        TextView rest_address = findViewById(R.id.RestaurantAddress);
+        rest_address.setText(restaurant.getAddress());
+        TextView rest_locality = findViewById(R.id.resturantlocality2);
+        rest_locality.setText(restaurant.getLocality());
+        TextView rest_rating = findViewById(R.id.resturantrating);
+        rest_rating.setText(restaurant.getRating());
     }
 
 
@@ -53,6 +66,24 @@ public class resturant_info extends AppCompatActivity {
         SharedPreferences.Editor editor = prefs.edit();
         editor.putString("budget",budget);
         editor.apply();
+    }
+
+    Resturant getResturant(String id, List<Resturant> resturantList){
+        for(int i = 0; i < resturantList.size(); i++){
+            if(resturantList.get(i).getId() == id){
+                Resturant result = resturantList.get(i);
+                return result;
+            }
+        }
+
+
+        return null;
+    }
+
+    public static String getId(Context context)
+    {
+        SharedPreferences prefs = context.getSharedPreferences("Id",0);
+        return prefs.getString("id","");
     }
 
 }
