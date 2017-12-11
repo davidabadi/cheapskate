@@ -75,57 +75,36 @@ public class food_categories extends AppCompatActivity {
 
     String category;
     //sets up the go button to read from the text box and change budget
-    public void gobutton(View v)
-    {
-        Button button = (Button) v;
-        Intent intent = new Intent(this, LoadingPage.class); //change this
-        v.findViewById(R.id.gobutton1);
-        mybudget = (EditText) findViewById(R.id.yourbudgettag2);
-        if(mybudget.getText().toString().trim().length() == 0){//if statement to prevent crash when nothing is entered for budget
-            Intent new_intent = new Intent(this, Restaurant_no_name.class);
-            startActivity(new_intent);
-            return;
-        }
-        setBudget(this, mybudget.getText().toString());
-        startActivity(intent);
-    }
-    //setBudget function
-    public static void setBudget(Context context, String budget)
-    {
-        SharedPreferences prefs = context.getSharedPreferences("mybudget", 0);
-        SharedPreferences.Editor editor = prefs.edit();
-        editor.putString("budget",budget);
-        editor.apply();
-    }
 
-    public void bagelsbutton(View v)
+
+    public void americansbutton(View v)
     {
         Button button = (Button) v;
-        Intent intent = new Intent(this, ListOfRestaurantsActivity.class);
+        Intent intent = new Intent(this, LoadingPage.class);
         v.findViewById(R.id.confirm);
         startActivity(intent);
     }
 
-    public void pizzabutton(View v)
+    public void bakerybutton(View v)
     {
         Button button = (Button) v;
-        Intent intent = new Intent(this, ListOfRestaurantsActivity.class);
+        Intent intent = new Intent(this, LoadingPage.class);
         v.findViewById(R.id.confirm);
         startActivity(intent);
     }
 
-    public void chinesefoodbutton(View v)
+    public void beveragesbutton(View v)
     {
         Button button = (Button) v;
-        Intent intent = new Intent(this, ListOfRestaurantsActivity.class);
+        Intent intent = new Intent(this, LoadingPage.class);
         v.findViewById(R.id.confirm);
         startActivity(intent);
     }
 
-    public void tacosbutton(View v)
+    public void breakfastbutton(View v)
     {
         Button button = (Button) v;
-        Intent intent = new Intent(this, ListOfRestaurantsActivity.class);
+        Intent intent = new Intent(this, LoadingPage.class);
         v.findViewById(R.id.confirm);
         startActivity(intent);
     }
@@ -133,12 +112,68 @@ public class food_categories extends AppCompatActivity {
     public void burgerbutton(View v)
     {
         Button button = (Button) v;
-        Intent intent = new Intent(this, ListOfRestaurantsActivity.class);
+        Intent intent = new Intent(this, LoadingPage.class);
         v.findViewById(R.id.confirm);
         startActivity(intent);
     }
 
-    public void indianfoodbutton(View v)
+    public void chinesebutton(View v)
+    {
+        Button button = (Button) v;
+        Intent intent = new Intent(this, LoadingPage.class);
+        v.findViewById(R.id.confirm);
+        startActivity(intent);
+    }
+
+    public void dessertbutton(View v)
+    {
+        Button button = (Button) v;
+        Intent intent = new Intent(this, LoadingPage.class);
+        v.findViewById(R.id.confirm);
+        startActivity(intent);
+    }
+
+    public void fastfoodbutton(View v)
+    {
+        Button button = (Button) v;
+        Intent intent = new Intent(this, LoadingPage.class);
+        v.findViewById(R.id.confirm);
+        startActivity(intent);
+    }
+
+    public void frenchbutton(View v)
+    {
+        Button button = (Button) v;
+        Intent intent = new Intent(this, LoadingPage.class);
+        v.findViewById(R.id.confirm);
+        startActivity(intent);
+    }
+
+    public void icecreambutton(View v)
+    {
+        Button button = (Button) v;
+        Intent intent = new Intent(this, LoadingPage.class);
+        v.findViewById(R.id.confirm);
+        startActivity(intent);
+    }
+
+    public void indianbutton(View v)
+    {
+        Button button = (Button) v;
+        Intent intent = new Intent(this, LoadingPage.class);
+        v.findViewById(R.id.confirm);
+        startActivity(intent);
+    }
+
+    public void italianbutton(View v)
+    {
+        Button button = (Button) v;
+        Intent intent = new Intent(this, LoadingPage.class);
+        v.findViewById(R.id.confirm);
+        startActivity(intent);
+    }
+
+    public void japanesebutton(View v)
     {
         Button button = (Button) v;
         Intent intent = new Intent(this, ListOfRestaurantsActivity.class);
@@ -146,66 +181,66 @@ public class food_categories extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void sandwichesbutton(View v)
+    public void koreanbutton(View v)
     {
         Button button = (Button) v;
-        Intent intent = new Intent(this, ListOfRestaurantsActivity.class);
+        Intent intent = new Intent(this, LoadingPage.class);
         v.findViewById(R.id.confirm);
         startActivity(intent);
     }
 
-    public void thaifoodbutton(View v)
+    public void mediterraneanbutton(View v)
     {
         Button button = (Button) v;
-        Intent intent = new Intent(this, ListOfRestaurantsActivity.class);
+        Intent intent = new Intent(this, LoadingPage.class);
         v.findViewById(R.id.confirm);
         startActivity(intent);
     }
 
-    public void donutsbutton(View v)
+    public void mexicanbutton(View v)
     {
         Button button = (Button) v;
-        Intent intent = new Intent(this, ListOfRestaurantsActivity.class);
+        Intent intent = new Intent(this, LoadingPage.class);
         v.findViewById(R.id.confirm);
         startActivity(intent);
     }
-
-    public void italianfoodbutton(View v)
+    public void pizzabutton(View v)
     {
         Button button = (Button) v;
-        Intent intent = new Intent(this, ListOfRestaurantsActivity.class);
+        Intent intent = new Intent(this, LoadingPage.class);
         v.findViewById(R.id.confirm);
         startActivity(intent);
-    }
-
-    public void japanesefoodbutton(View v)
-    {
-        Button button = (Button) v;
-        Intent intent = new Intent(this, ListOfRestaurantsActivity.class);
-        v.findViewById(R.id.confirm);
-        startActivity(intent);
-        category = "japanese";
     }
 
     public void seafoodbutton(View v)
     {
         Button button = (Button) v;
-        Intent intent = new Intent(this, ListOfRestaurantsActivity.class);
+        Intent intent = new Intent(this, LoadingPage.class);
         v.findViewById(R.id.confirm);
         startActivity(intent);
-        category = "seafood";
     }
-
-    public static void setCategory(Context context, Integer category)
+    public void southernbutton(View v)
     {
-        SharedPreferences prefs3 = context.getSharedPreferences("categoryNum", 0);
-        SharedPreferences.Editor editor3 = prefs3.edit();
-        editor3.putString("foodCategory", String.valueOf(category));
-        editor3.apply();
+        Button button = (Button) v;
+        Intent intent = new Intent(this, LoadingPage.class);
+        v.findViewById(R.id.confirm);
+        startActivity(intent);
     }
 
-    
-
+    public void thaibutton(View v)
+    {
+        Button button = (Button) v;
+        Intent intent = new Intent(this, LoadingPage.class);
+        v.findViewById(R.id.confirm);
+        startActivity(intent);
+    }
+    public void vegetarianbutton(View v)
+    {
+        Button button = (Button) v;
+        Intent intent = new Intent(this, LoadingPage.class);
+        v.findViewById(R.id.confirm);
+        startActivity(intent);
+    }
 /*    enum OffersOrder {("cuisines":"seafood");
         String sound;
         OffersOrder(String s) { sound = s; }
