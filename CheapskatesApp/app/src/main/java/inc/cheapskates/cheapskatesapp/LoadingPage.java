@@ -42,8 +42,6 @@ import java.util.List;
 import java.util.Map;
 
 public class LoadingPage extends AppCompatActivity {
-    private static int SPLASH_TIME_OUT = 4000;
-
     List<Resturant> resturantList;
 
     @Override
@@ -56,48 +54,22 @@ public class LoadingPage extends AppCompatActivity {
         budget_view.setText("$" + getBudget(this));
         resturantList = new ArrayList<>();
 
-        //Displays the code in a TextView - For TESTING PURPOSES ONLY
-        //TextView latitude_view = findViewById(R.id.latview);
-        //latitude_view.setText(getLatitude(this));
-
-        //TextView longitude_view = findViewById(R.id.lonview);
-        //longitude_view.setText(getLongitude(this));
 
         //stores longitude and latitude
         String longitude = getLongitude(this);
         String latitude = getLatitude(this);
         String cuisine = getCuisine(this);
-        //Writes URL in string form
-        //String request_url = "https://developers.zomato.com/api/v2.1/search?lat=" + latitude + "&lon=" +longitude + "&radius=2000&sort=real_distance&order=asc";
-        //String request_url = "https://developers.zomato.com/api/v2.1/search?lat=42.3698998&lon=-71.072686&radius=2000&sort=real_distance&order=asc";
-        //String request_url = "https://developers.zomato.com/api/v2.1/search?lat=42.3505&lon=-71.1054&radius=2000&sort=real_distance&order=asc";
-        //String request_url = "https://developers.zomato.com/api/v2.1/search?lat=42.3505&lon=-71.1054&radius=2000&cuisines=1&sort=real_distance&order=asc";
         String request_url = "https://developers.zomato.com/api/v2.1/search?lat="+ latitude + "&lon="+ longitude + "&radius=2000&cuisines=" + cuisine + "&sort=real_distance&order=asc";
-
-        //Just makes the loading page stay for 4 seconds
-//        if (Integer.parseInt(getBudget(this)) == 0) {
-//            Intent homeIntent = new Intent(LoadingPage.this, Restaurant_no_name.class);
-//            startActivity(homeIntent);
-//            finish();
-//        } else
-//            {
-//                //Executes the API call
-//                new JSONTask().execute(request_url);
-//            }
 
         getResponse(longitude, longitude);
     }
 
-
+    //JSON parsing and establishing connection to zomato
     private void getResponse(String latitude, String longitude){
         RequestQueue queue = Volley.newRequestQueue(this);
         longitude = getLongitude(this);
         latitude = getLatitude(this);
         String cuisine = getCuisine(this);
-        //String request_url = "https://developers.zomato.com/api/v2.1/search?lat=" + latitude + "&lon=" +longitude + "&radius=2000&sort=real_distance&order=asc";
-        //String request_url = "https://developers.zomato.com/api/v2.1/search?lat=42.3698998&lon=-71.072686&radius=2000&sort=real_distance&order=asc";
-        //String request_url = "https://developers.zomato.com/api/v2.1/search?lat=42.3505&lon=-71.1054&radius=2000&sort=real_distance&order=asc";
-        //String request_url = "https://developers.zomato.com/api/v2.1/search?lat=42.3505&lon=-71.1054&radius=2000&cuisines=1&sort=real_distance&order=asc";
         String request_url = "https://developers.zomato.com/api/v2.1/search?lat="+ latitude + "&lon="+ longitude + "&radius=2000&cuisines=" + cuisine + "&sort=real_distance&order=asc";
         JsonObjectRequest postRequest = new JsonObjectRequest(Request.Method.GET, request_url, null,
                 new Response.Listener<JSONObject>() {
@@ -107,17 +79,14 @@ public class LoadingPage extends AppCompatActivity {
                         Log.d("Response", response.toString());
 
                         try {
-
-//                            JSONObject obj = new JSONObject(response);
-
                             JSONArray restaurantsArray = response.getJSONArray("restaurants");
-
 
                             for (int i = 0; i < restaurantsArray.length(); i++) {
 
                                 JSONObject restObject = restaurantsArray.getJSONObject(i);
                                 JSONObject jsonObjectRest = restObject.getJSONObject("restaurant");
 
+                                //Add restaurant object if the entered budget is above the restaurant's price range
                                 if(compareBudget(jsonObjectRest)) {
                                     Resturant resturant = new Resturant();
                                     jsonObjectRest.getString("name");
@@ -133,7 +102,7 @@ public class LoadingPage extends AppCompatActivity {
                                 }
                             }
 
-
+                            //Creates an intent to display the restaurants and pass the list of restaurants as an extra
                             Intent intent = new Intent(LoadingPage.this, ListOfRestaurantsActivity.class);
                             intent.putExtra("listResturant", (Serializable) resturantList);
                             startActivity(intent);
@@ -141,9 +110,6 @@ public class LoadingPage extends AppCompatActivity {
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
-
-
-
                     }
                 },
                 new Response.ErrorListener() {
@@ -165,9 +131,7 @@ public class LoadingPage extends AppCompatActivity {
         queue.add(postRequest);
     }
 
-
-
-
+    //Compares the entered budget with the restaurant's price range from zomato
     boolean compareBudget(JSONObject rest) throws JSONException {
         boolean result =  false;
         int range = 0;
@@ -188,129 +152,6 @@ public class LoadingPage extends AppCompatActivity {
 
         return result;
     }
-
-
-    //Makes the API Call run in the background
-    /*private class JSONTask extends AsyncTask<String, JSONObject, JSONObject>
-    {
-        //Shows the Progress Bar before the background processing is done
-        protected void onPreExecute()
-        {
-            ProgressBar progressBar;
-            progressBar = (ProgressBar)findViewById(R.id.progressBar);
-            progressBar.setVisibility(View.VISIBLE);
-        }
-
-        //Processes background stuffs
-        protected JSONObject doInBackground(String... request_url)
-        {
-            //Establishes a URL Connection here
-            HttpURLConnection connection = null;
-            BufferedReader reader = null;
-            JSONObject jsonObject = null;
-            TextView text = findViewById(R.id.testcase); //testcase
-            try
-            {
-                URL url = new URL(request_url[0]);
-                connection = (HttpURLConnection) url.openConnection();
-//                7620ea9ddb627ea338e82100eeeabb02
-
-//                curl -X GET --header "Accept: application/json" --header "user-key: 7620ea9ddb627ea338e82100eeeabb02" "https://developers.zomato.com/api/v2.1/search?lat=26.8497&lon=75.7692&radius=200"
-                connection.setRequestProperty("user-key","7620ea9ddb627ea338e82100eeeabb02");
-                connection.setRequestProperty("Accept","application/json");
-//                connection.setRequestProperty("x-api-key","fa221c30c201daf8380ac435cedfebe9");
-                connection.connect();
-
-                //Stores the data from url into a stream
-                InputStream stream = connection.getInputStream(); //stores info into a stream object
-                BufferedReader streamReader = new BufferedReader(new InputStreamReader(stream));
-                StringBuilder stringBuilder = new StringBuilder();
-
-
-                String currentLine;
-                try {
-                    while ((currentLine = streamReader.readLine()) != null) {
-                        stringBuilder.append(currentLine);
-                    }
-                    JSONTokener jsonTokener = new JSONTokener(stringBuilder.toString());
-                    jsonObject = new JSONObject(jsonTokener);
-                    if(jsonObject == null)
-                    {
-                        text.setText("WINNNNNNNNNN");
-                    }
-
-                    String restaurantName;
-                    //JsonElement restaurantJSONElement = null;
-                    JsonPrimitive restaurantJSONPrimivite;
-                    JsonObject jsonObject1;
-                    JsonParser parser = new JsonParser();
-                    JsonArray restaurantsJSONArray;
-                    List<String> restaurantnamelist = new ArrayList<String>();
-
-
-                    if(jsonObject == null)
-                    {
-                        text.setText("KIJJKJHKJJJ");
-                    }
-                    try {
-                        if(jsonObject == null) {
-                            text.setText("FAILS!!!!");
-                        }
-                        else
-                        {
-                            restaurantsJSONArray =  (JsonArray) jsonObject.get("restaurant");
-                            text.setText("WE WON!!!!");
-                        }
-
-                        //for(int i = 0; i < restaurantsJSONArray.size(); i++) {
-                        //gets the restaurant object
-                        //jsonObject1 = ((JsonObject) restaurantsJSONArray.get(0));
-                        //JsonElement restaurantJSONElement = jsonObject1.get("name");
-                        //gets the name of the restaurant from the restaurant object
-                /*restaurantJSONPrimivite = ((JsonObject) restaurantJSONElement.getAsJsonObject()).getAsJsonPrimitive("name");
-                //gets the name of the restaurant as a string
-                restaurantName = restaurantJSONPrimivite.getAsString();
-                //adds the name of the restaurant to the list of restaurant
-                restaurantnamelist.add(restaurantName);/
-                    }catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-
-                }
-                catch (IOException error)
-                {
-                    error.printStackTrace();
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-            catch (MalformedURLException e) {
-                e.printStackTrace();
-                return null;
-            } catch (IOException e) {
-                e.printStackTrace();
-            } finally
-            {
-                if(connection != null)
-                {
-                    connection.disconnect();
-                }
-            }
-
-
-            return jsonObject;
-        }
-
-        //Move on to Food Categories Page when processing is done
-        protected void onPostExecute(JSONObject result)
-        {
-            super.onPostExecute(result);
-            Intent intent = new Intent(LoadingPage.this, food_categories.class);
-            startActivity(intent);
-            finish();
-        }
-
-    }*/
 
     //Finds the budget and retrieve from SharedPreferences
     public static String getBudget(Context context)
@@ -341,26 +182,3 @@ public class LoadingPage extends AppCompatActivity {
     }
 
 }
-
-/*enum OffersOrder { BEST("BEST"),GOLD("GOLD"),RISK("RISK"),STANDARD("STANDARD"),PUBLIC("PUBLIC");
-    String sound;
-    OffersOrder(String s) { sound = s; }
-}
-
-    List<food_categories.OffersOrder> l = new ArrayList<>();
-
-// code to populate your list
-...
-
-// sorting
-        java.util.Collections.sort(l, new Comparator<OffersOrder>(){
-@Override
-public int compare(OffersOrder o1, OffersOrder o2) {
-
-        if(OffersOrder o1 < o2)
-        // this method should return a negative value if o1 < o2
-        // this method should return 0 if o1 == o2
-        // this method should return a positive value if o1 > o2
-        return 0;
-        }
-        });*/

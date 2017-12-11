@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.io.Serializable;
 import java.util.List;
 
 public class resturant_info extends AppCompatActivity {
@@ -38,17 +39,6 @@ public class resturant_info extends AppCompatActivity {
             lat = restaurant.getLatitude();
             lon = restaurant.getLongitude();
         }
-        /*
-        String id = getIntent().getExtras().getParcelable("id");
-
-
-
-
-
-        */
-
-
-
     }
 
 
@@ -119,7 +109,8 @@ public class resturant_info extends AppCompatActivity {
     public void back(View v) {
         Button button = (Button) v;
         v.findViewById(R.id.back_button2);
-        Intent intent = new Intent(this, food_categories.class);
+        Intent intent = new Intent(this, ListOfRestaurantsActivity.class);
+        intent.putExtra("listResturant", (Serializable) resturantList);
         startActivity(intent);
     }
     Dialog MyDialog;

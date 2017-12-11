@@ -13,6 +13,7 @@ public class splashpage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_splashpage);
+        //Makes the splashpage show for 4 seconds
         new Handler().postDelayed(new Runnable(){
             @Override
             public void run(){

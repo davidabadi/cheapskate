@@ -35,6 +35,8 @@ public class HomeActivity extends AppCompatActivity {
         getLocation();
     }
 
+
+    //Asking for permission to use the gps location services and if granted permission get the phones latitude and longitude
     void getLocation(){
         if(ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) !=
                 PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)
@@ -50,12 +52,15 @@ public class HomeActivity extends AppCompatActivity {
             }
 
             else{
+                //Hard coded latitude and longitude for testing purposes in the simulator
                 Latitude = 42.3505;
                 Longitude = -71.1054;
             }
         }
     }
 
+
+    //If the permission for location is granted ask everything about the location
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults){
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -103,7 +108,7 @@ public class HomeActivity extends AppCompatActivity {
         }
     }
 
-    //Function for FIVE dollars
+    //Function for TEN dollars
     public void fivebutton(View v)
     {
         Button button = (Button) v;
@@ -114,7 +119,7 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    //Function for TEN dollars
+    //Function for TWENTY FIVE dollars
     public void tenbutton(View v)
     {
         Button button = (Button) v;
@@ -125,7 +130,7 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    //Function for FIFTEEN dollars
+    //Function for FIFTY dollars
     public void fifbutton(View v)
     {
         Button button = (Button) v;
@@ -144,6 +149,8 @@ public class HomeActivity extends AppCompatActivity {
         editor.apply();
     }
 
+
+    //Set the location in shared preferences
     public static void setLocation(Context context, String latitude, String longitude)
     {
         SharedPreferences prefs1 = context.getSharedPreferences("Latitude", 0);

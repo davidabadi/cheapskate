@@ -28,6 +28,8 @@ public class ListOfRestaurantsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list_of_restaurants);
         listView = findViewById(R.id.resturantList);
 
+
+        //Get restaurant list from last intent
         resturantList = (List<Resturant>) getIntent().getSerializableExtra("listResturant");
 
         ListViewAdapter adapter = new ListViewAdapter(getApplicationContext(), resturantList);
@@ -35,13 +37,10 @@ public class ListOfRestaurantsActivity extends AppCompatActivity {
         //adding the adapter to listview
         listView.setAdapter(adapter);
 
-        //Getting intent from ListView
+        //Getting intent from ListView and passing the id for the clicked restaurant
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                /*Intent it = new Intent(ListOfRestaurantsActivity.this, resturant_info.class);
-                it.putExtra("restaurant",resturantList.get(position));
-                */
                 Intent intent = new Intent(ListOfRestaurantsActivity.this,resturant_info.class).putExtra("id",resturantList.get(position).getId());
                 intent.putExtra("restaurantsList",(Serializable)resturantList );
                 startActivity(intent);
@@ -84,6 +83,7 @@ public class ListOfRestaurantsActivity extends AppCompatActivity {
         editor.apply();
     }
 
+    //Set the backbutton to the categories activity
     public void backbutton(View v) {
         Button button = (Button) v;
         Intent intent = new Intent(this, food_categories.class);
