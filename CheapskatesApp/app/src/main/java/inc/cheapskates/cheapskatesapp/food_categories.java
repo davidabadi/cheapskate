@@ -292,6 +292,12 @@ public class food_categories extends AppCompatActivity {
         editor5.apply();
     }
 
+    public void homebutton(View v) {
+        Button button = (Button) v;
+        Intent intent = new Intent(this, HomeActivity.class);
+        v.findViewById(R.id.home_button);
+        startActivity(intent);
+    }
 
 
     /*    enum OffersOrder {("cuisines":"seafood");
